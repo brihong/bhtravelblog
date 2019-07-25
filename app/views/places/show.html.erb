@@ -16,3 +16,15 @@
   <%= f.input :message %>
   <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
 <% end %>
+
+<h1>Comments</h1>
+
+<% @place.comments.each do |comment| %>
+  <div>
+    <blockquote>
+        <%= comment.message %>
+        <br /> -
+      <small><%= comment.user.email %></small>
+    </blockquote>
+  </div>
+<% end %>
