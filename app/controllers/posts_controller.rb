@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @place.user != current_user
+    if @post.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
     end
 
